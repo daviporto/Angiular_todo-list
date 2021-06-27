@@ -1,0 +1,55 @@
+<h3 class="bg-primary text-center text-white p-2">
+    {{ userName }}'s To Do List
+  <h6 class="mt-1">{{ itemCount }} {{ showComplete ? "" : "Incomplete" }} Items</h6>
+</h3>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <input class="form-control" placeholder="Enter task here" #todoText />
+    </div>
+    <div class="col-auto">
+      <button class="btn btn-primary" (click)="addItem(todoText.value)">
+        Add
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="card-columns">
+  <div *ngFor="let item of items; let i = index" class="card text-primary border-primary">
+    <div class="card-body">
+      <h5 class="card-title">task: {{i + 1}}</h5>
+      <p>{{item.task}}</p>
+      <div [ngSwitch]="item.complete">
+        <button *ngSwitchDefault
+         type="button"
+        class="btn btn-success btn-sb btn-block"
+        (click)="item.complete = true">
+          completar
+        </button>
+        <button *ngSwitchCase="true"
+        type="button"
+        class="btn btn-danger btn-sb btn-block"
+        (click)="removeItem(item)">
+         remover
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-secondary text-white text-center p-2">
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" [(ngModel)]="showComplete" />
+    <label class="form-check-label" for="defaultCheck1">
+          Show Completed Tasks
+    </label>
+  </div>
+</div>
+
+<style>
+.card-columns{
+ margin: 20px 15px;
+}
+
+</style>
