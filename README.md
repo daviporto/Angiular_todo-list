@@ -1,4 +1,4 @@
-**## Primeiro app usando Angular 9, um simples todo, com persistência no localStorage.**
+## Primeiro app usando Angular 9, um simples todo, com persistência no localStorage.
 
 
 
@@ -12,7 +12,7 @@
 
 
 
-**## Development server**
+## Development server
 
 
 
@@ -20,7 +20,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 
 
-**## Build**
+## Build
 
 
 
